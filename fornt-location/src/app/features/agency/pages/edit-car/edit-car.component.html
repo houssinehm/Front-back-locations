@@ -1,0 +1,124 @@
+<div class="p-4 md:p-6">
+  <div class="mb-4 md:mb-6">
+    <h1 class="text-xl md:text-2xl font-bold">Edit Car</h1>
+    <p class="text-gray-600">Update the details of your car.</p>
+  </div>
+
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()" class="bg-white rounded-lg p-4 md:p-6 shadow-sm">
+    <h2 class="text-lg md:text-xl font-semibold mb-4 md:mb-6">Car Details</h2>
+    <p class="text-gray-600 mb-4 md:mb-6">Edit the basic information about the car.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <!-- Brand -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Brand</label>
+        <select formControlName="brand" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+          <option value="">Select car brand</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="bmw">BMW</option>
+          <option value="audi">Audi</option>
+          <option value="tesla">Tesla</option>
+        </select>
+      </div>
+      <!-- Model -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Model</label>
+        <input type="text" formControlName="model" placeholder="Enter car model" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+      </div>
+      <!-- Car Type -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Car Type</label>
+        <select formControlName="type" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+          <option value="">Select car type</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV</option>
+          <option value="coupe">Coupe</option>
+        </select>
+      </div>
+      <!-- Fuel Type -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Fuel Type</label>
+        <select formControlName="fuel" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+          <option value="">Select fuel type</option>
+          <option value="petrol">Petrol</option>
+          <option value="diesel">Diesel</option>
+          <option value="electric">Electric</option>
+          <option value="hybrid">Hybrid</option>
+        </select>
+      </div>
+      <!-- Gearbox -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Gearbox</label>
+        <select formControlName="gearbox" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+          <option value="">Select gearbox type</option>
+          <option value="manual">Manual</option>
+          <option value="automatic">Automatic</option>
+        </select>
+      </div>
+      <!-- Number of Seats -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Number of Seats</label>
+        <input type="number" formControlName="number_place" min="1" max="9" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+      </div>
+      <!-- Number of Doors -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Number of Doors</label>
+        <input type="number" formControlName="number_door" min="2" max="5" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+      </div>
+      <!-- Minimum Driver Age -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Minimum Driver Age</label>
+        <input type="number" formControlName="driving_license_min_year" min="18" max="25" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+      </div>
+      <!-- Luggage Capacity -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Luggage Capacity (Number of Bags)</label>
+        <input type="number" formControlName="number_bag" min="1" max="5" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+      </div>
+      <!-- Deposit Amount -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Deposit Amount ($)</label>
+        <input type="number" formControlName="caution" min="0" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-2">City</label>
+        <select formControlName="city" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#FFC107]">
+          <option value="RABAT">RABAT</option>
+          <option value="FES">FES</option>
+          <option value="TANGER">TANGER</option>
+          <option value="CASABLANCA">CASABLANCA</option>
+          <option value="AGADIR">AGADIR</option>
+          <option value="MARRAKECH">MARRAKECH</option>
+        </select>
+      </div>
+    </div>
+    <!-- Features -->
+    <div class="mt-4 md:mt-6">
+      <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+        <label class="flex items-center">
+          <input type="checkbox" formControlName="clim" class="form-checkbox text-[#FFC107] rounded">
+          <span class="ml-2">Air Conditioning</span>
+        </label>
+      </div>
+    </div>
+    <!-- Upload Photos -->
+    <div class="mt-4 md:mt-6">
+      <label class="block text-sm font-medium text-gray-700 mb-2">Upload Photos</label>
+      <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 md:p-6 text-center cursor-pointer"
+           (click)="fileInput.click()">
+        <input #fileInput type="file" accept="image/*" multiple class="hidden" (change)="onFileSelected($event)">
+        <span class="material-icons text-3xl md:text-4xl text-gray-400">cloud_upload</span>
+        <p class="mt-2 text-sm md:text-base text-gray-600">Drag and drop image files here, or click to browse</p>
+        <p class="mt-1 text-xs text-gray-500">Supported formats: JPG, PNG, WEBP</p>
+      </div>
+    </div>
+    <!-- Buttons -->
+    <div class="mt-6 md:mt-8 flex flex-col md:flex-row justify-end gap-3 md:gap-4">
+      <button type="button" (click)="cancelEdit.emit()" class="w-full md:w-auto px-6 py-2 border border-gray-300 rounded-lg text-gray-700">Cancel</button>
+      <button type="submit" [disabled]="carForm.invalid || loading" class="w-full md:w-auto px-6 py-2 bg-[#FFC107] text-black rounded-lg">
+        <span *ngIf="!loading">Update Car</span>
+        <span *ngIf="loading">Updating...</span>
+      </button>
+    </div>
+  </form>
+</div> 

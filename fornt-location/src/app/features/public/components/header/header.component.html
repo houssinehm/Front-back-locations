@@ -1,0 +1,40 @@
+<nav class="box-border font-montserrat bg-white/90 backdrop-blur-sm py-4 pl-12 pr-4 sticky top-0 z-50 shadow-sm">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a routerLink="/" class="flex items-center">
+      <span class="text-navy font-bold text-2xl sm:text-xl md:text-3xl px-4 sm:px-8 md:px-4">
+        LUXE<span class="text-yellow-500">CARS</span>
+      </span>
+    </a>
+     <button  (click)="toggleMenu()" class="md:hidden flex items-center p-2">
+      <svg *ngIf="!menuOpen" fill="#000000" width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>icn/menu</title><path d="M2 3h12a1 1 0 0 1 0 2H2a1 1 0 1 1 0-2zm0 4h12a1 1 0 0 1 0 2H2a1 1 0 1 1 0-2zm0 4h12a1 1 0 0 1 0 2H2a1 1 0 0 1 0-2z" id="a"/></svg>
+      <svg *ngIf="menuOpen" width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.293 5.293a1 1 0 0 1 1.414 0L12 10.586l5.293-5.293a1 1 0 1 1 1.414 1.414L13.414 12l5.293 5.293a1 1 0 0 1-1.414 1.414L12 13.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L10.586 12 5.293 6.707a1 1 0 0 1 0-1.414z" fill="#0D0D0D"/></svg>
+
+    </button>
+
+
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#" class="text-navy hover:text-yellow-500 transition-colors duration-300">Home</a>
+      <a href="#categories" class="text-navy hover:text-yellow-500 transition-colors duration-300">Cars</a>
+      <a href="#how-it-works" class="text-navy hover:text-yellow-500 transition-colors duration-300">How It Works</a>
+      <a href="#about" class="text-navy hover:text-yellow-500 transition-colors duration-300">About</a>
+      <a href="#contact" class="text-navy hover:text-yellow-500 transition-colors duration-300">Contact</a>
+      <div class="flex items-center space-x-2">
+        <a href="auth/login" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">Sign In</a>
+        <a href="auth/register" class="bg-gray-900 text-white px-4 py-2 rounded hover:bg-black transition">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div [class]="menuOpen ? 'absolute top-16 left-0 right-0 bg-white shadow-md md:hidden transition-all duration-300 ease-in-out opacity-100 pointer-events-auto translate-y-0' : 'absolute top-16 left-0 right-0 bg-white shadow-md md:hidden transition-all duration-300 ease-in-out opacity-0 pointer-events-none -translate-y-full'">
+    <div class="flex flex-col py-4 space-y-3">
+      <a href="#" class="px-6 py-2 text-navy hover:bg-gray-100 transition-colors duration-300">Home</a>
+      <a href="#categories" class="px-6 py-2 text-navy hover:bg-gray-100 transition-colors duration-300">Cars</a>
+      <a href="#how-it-works" class="px-6 py-2 text-navy hover:bg-gray-100 transition-colors duration-300">How It Works</a>
+      <a href="#about" class="px-6 py-2 text-navy hover:bg-gray-100 transition-colors duration-300">About</a>
+      <a href="#contact" class="px-6 py-2 text-navy hover:bg-gray-100 transition-colors duration-300">Contact</a>
+      <a href="#" class="mx-6 bg-yellow-500 text-white text-center px-4 py-2 rounded hover:bg-yellow-600 transition">Sign In</a>
+      <a href="#" class="mx-6 bg-black/90 text-white text-center px-4 py-2 rounded hover:bg-black transition">Sign Up</a>
+    </div>
+  </div>
+</nav>

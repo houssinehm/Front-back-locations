@@ -1,0 +1,78 @@
+<div class="h-full">
+  <div [class]="'bg-[#1C1C1C] text-white h-screen transition-all duration-300 ' + 
+                (isCollapsed ? 'w-20' : 'w-64')" 
+       [class.p-4]="!isCollapsed"
+       [class.px-2]="isCollapsed"
+       [class.py-4]="isCollapsed">
+    <div class="flex items-center mb-8">
+      <h1 *ngIf="!isCollapsed" class="text-2xl font-bold text-[#FFC107]">CarAgency</h1>
+      <div [class]="isCollapsed ? 'w-full flex justify-center' : 'ml-auto'">
+        <button (click)="toggleCollapse()" 
+                class="hidden lg:flex w-10 h-10 items-center justify-center border border-gray-600 rounded-lg bg-transparent text-white hover:border-gray-400 transition-colors">
+          <span class="material-icons transform transition-transform duration-300"
+                [class.rotate-180]="isCollapsed">
+            chevron_left
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="flex-1">
+      <ul class="space-y-2">
+        <li>
+          <a routerLink="/agency/dashboard" 
+             routerLinkActive="border-[#FFC107] text-[#FFC107]"
+             [class]="'flex items-center gap-3 py-3 text-gray-300 border-l-[3px] border-transparent hover:text-[#FFC107] transition-colors ' +
+                      (isCollapsed ? 'px-0 justify-center' : 'px-4')">
+            <span class="material-icons">dashboard</span>
+            <span *ngIf="!isCollapsed" class="whitespace-nowrap">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/agency/my-cars"
+             routerLinkActive="border-[#FFC107] text-[#FFC107]"
+             [class]="'flex items-center gap-3 py-3 text-gray-300 border-l-[3px] border-transparent hover:text-[#FFC107] transition-colors ' +
+                      (isCollapsed ? 'px-0 justify-center' : 'px-4')">
+            <span class="material-icons">directions_car</span>
+            <span *ngIf="!isCollapsed" class="whitespace-nowrap">My Cars</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/agency/published-ads"
+             routerLinkActive="border-[#FFC107] text-[#FFC107]"
+             [class]="'flex items-center gap-3 py-3 text-gray-300 border-l-[3px] border-transparent hover:text-[#FFC107] transition-colors ' +
+                      (isCollapsed ? 'px-0 justify-center' : 'px-4')">
+            <span class="material-icons">article</span>
+            <span *ngIf="!isCollapsed" class="whitespace-nowrap">Published Ads</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/agency/reserved-cars"
+             routerLinkActive="border-[#FFC107] text-[#FFC107]"
+             [class]="'flex items-center gap-3 py-3 text-gray-300 border-l-[3px] border-transparent hover:text-[#FFC107] transition-colors ' +
+                      (isCollapsed ? 'px-0 justify-center' : 'px-4')">
+            <span class="material-icons">event</span>
+            <span *ngIf="!isCollapsed" class="whitespace-nowrap">Reserved Cars</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/agency/account-settings"
+             routerLinkActive="border-[#FFC107] text-[#FFC107]"
+             [class]="'flex items-center gap-3 py-3 text-gray-300 border-l-[3px] border-transparent hover:text-[#FFC107] transition-colors ' +
+                      (isCollapsed ? 'px-0 justify-center' : 'px-4')">
+            <span class="material-icons">settings</span>
+            <span *ngIf="!isCollapsed" class="whitespace-nowrap">Account Settings</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="mt-auto pt-4 border-t border-gray-700">
+      <button [class]="'flex items-center gap-3 py-3 w-full text-gray-300 border-l-[3px] border-transparent hover:text-[#FFC107] transition-colors ' +
+                       (isCollapsed ? 'px-0 justify-center' : 'px-4')">
+        <span class="material-icons">logout</span>
+        <span *ngIf="!isCollapsed" class="whitespace-nowrap">Log Out</span>
+      </button>
+    </div>
+  </div>
+</div> 

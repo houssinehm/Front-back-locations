@@ -1,0 +1,105 @@
+<div class="font-awesomew-full bg-white p-4 sm:p-6 rounded-lg shadow">
+  <style>
+    .custom-radio {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: white;
+      border: 2px solid #f5c518; /* Golden-yellow border */
+      cursor: pointer;
+      position: relative; /* For centering the inner circle */
+    }
+
+    .custom-radio:checked {
+      background-color: #f5c518; /* Golden-yellow fill */
+      border: 2px solid #f5c518;
+    }
+
+    .custom-radio:checked::after {
+      content: '';
+      position: absolute;
+      width: 12px; /* Increased from 8px to 12px */
+      height: 12px;
+      background-color: #f5c518; /* Golden-yellow to match the outer circle */
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the inner circle */
+      box-shadow: 0 0 0 2px white; /* White "gap" between inner and outer circles */
+    }
+  </style>
+  <h2 class="text-lg font-semibold mb-4">Filters</h2>
+  <form>
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Brand</label>
+      <select class="border rounded-lg p-2 w-full text-gray-500" [(ngModel)]="selectedBrand" name="brand">
+        <option value="">Select brand</option>
+        <option *ngFor="let brand of brands" [value]="brand">{{ brand }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Type</label>
+      <select class="border rounded-lg p-2 w-full text-gray-500" [(ngModel)]="selectedType" name="type">
+        <option value="">Select type</option>
+        <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Fuel Type</label>
+      <select class="border rounded-lg p-2 w-full text-gray-500" [(ngModel)]="selectedFuelType" name="fuelType">
+        <option value="">Select fuel type</option>
+        <option *ngFor="let fuel of fuelTypes" [value]="fuel">{{ fuel }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-sm font-medium mb-2">Transmission</label>
+      <div class="flex flex-col gap-2">
+        <label class="flex items-center gap-2">
+          <input
+            type="radio"
+            name="transmission"
+            value="Automatic"
+            [(ngModel)]="selectedTransmission"
+            class="w-5 h-5 rounded-full custom-radio"
+          >
+          <span>Automatic</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <input
+            type="radio"
+            name="transmission"
+            value="Manual"
+            [(ngModel)]="selectedTransmission"
+            class="w-5 h-5 rounded-full custom-radio"
+          >
+          <span>Manual</span>
+        </label>
+      </div>
+    </div>
+    <div>
+      <label class="block text-sm font-medium mb-2">Climate Control</label>
+      <div class="flex flex-col gap-2">
+        <label class="flex items-center gap-2">
+          <input
+            type="radio"
+            name="climate"
+            value="Air Conditioning"
+            [(ngModel)]="selectedClimate"
+            class="w-5 h-5 rounded-full custom-radio"
+          >
+          <span>Air Conditioning</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <input
+            type="radio"
+            name="climate"
+            value="Heating"
+            [(ngModel)]="selectedClimate"
+            class="w-5 h-5 rounded-full custom-radio"
+          >
+          <span>Heating</span>
+        </label>
+      </div>
+    </div>
+  </form>
+</div>

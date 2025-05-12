@@ -1,0 +1,84 @@
+<!-- <app-header></app-header> -->
+<!-- Main Section -->
+<main class="px-4 sm:px-6 md:px-24 py-10">
+  <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-center md:text-left">{{annonce.car.brand +" "+ annonce.car.model}}</h2>
+
+  <div class="grid md:grid-cols-3 gap-8 items-start">
+    <!-- Car Image + Description -->
+    <div class="md:col-span-2 bg-white p-4 sm:p-6 rounded shadow">
+      <img
+       img [src]="'http://localhost:8080/uploads/' + annonce.car.url_photo" [alt]="annonce.car.model" class="rounded mb-4 w-full object-cover max-h-[355px]" />
+      <p class="text-gray-700 text-sm sm:text-base leading-relaxed">{{annonce.description}}</p>
+
+      <!-- Car Features Section -->
+      <div class="mt-10">
+        <h4 class="text-xl sm:text-2xl font-bold mb-4 text-gray-800 border-b border-gray-200 pb-2">Car Specifications</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Feature Card -->
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Car Type</p>
+            <p class="text-sm text-gray-600">{{annonce.car.type}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Fuel Type</p>
+            <p class="text-sm text-gray-600">{{annonce.car.fuel}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Gearbox</p>
+            <p class="text-sm text-gray-600">{{annonce.car.gearbox}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Number of Seats</p>
+            <p class="text-sm text-gray-600">5 {{annonce.car.number_place}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Number of Doors</p>
+            <p class="text-sm text-gray-600">{{annonce.car.number_door}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Luggage Capacity</p>
+            <p class="text-sm text-gray-600">{{annonce.car.number_bag}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Deposit Amount</p>
+            <p class="text-sm text-gray-600">{{annonce.car.caution}} DH</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Air Conditioning</p>
+            <p class="text-sm text-gray-600">{{annonce.car.clim}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="font-semibold text-gray-800">Free Cancellation</p>
+            <p class="text-sm text-gray-600">Up to 48h before pickup</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Summary -->
+    <div class="bg-white p-4 sm:p-6 rounded shadow">
+      <h3 class="text-xl sm:text-2xl font-semibold mb-4">Booking Summary</h3>
+      <div class="text-sm sm:text-base space-y-3 mb-6">
+        <div class="flex justify-between">
+          <span>Pickup</span><span class="font-medium">Monday, April 28</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Return</span><span class="font-medium">Thursday, May 1</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Daily rate</span><span class="font-medium">$299</span>
+        </div>
+        <div class="flex justify-between">
+          <span>Duration</span><span class="font-medium">3 days</span>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <div class="flex justify-between font-bold text-xl mb-4">
+        <span>Total</span><span>$897</span>
+      </div>
+      <button class="w-full bg-yellow-500 text-white font-semibold py-3 rounded hover:bg-yellow-600 transition">Reserve Now</button>
+      <p class="text-xs text-center text-gray-500 mt-3">Free cancellation up to 48 hours before pickup</p>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

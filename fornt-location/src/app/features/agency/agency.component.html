@@ -1,0 +1,47 @@
+<div class="flex h-screen bg-gray-100">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#1C1C1C] text-white">
+    <div class="p-4">
+      <h1 class="text-2xl font-bold text-[#FFC107]">CarAgency</h1>
+    </div>
+    
+    <nav class="mt-8">
+      <a routerLink="dashboard" routerLinkActive="bg-gray-800" class="flex items-center px-4 py-3 hover:bg-gray-800">
+        <span class="material-icons mr-3">dashboard</span>
+        Dashboard
+      </a>
+      <a routerLink="add-car" routerLinkActive="bg-gray-800" class="flex items-center px-4 py-3 hover:bg-gray-800">
+        <span class="material-icons mr-3">add_circle</span>
+        Add a Car
+      </a>
+      <a routerLink="my-cars" routerLinkActive="bg-gray-800" class="flex items-center px-4 py-3 hover:bg-gray-800">
+        <span class="material-icons mr-3">directions_car</span>
+        My Cars
+      </a>
+      <a routerLink="published-ads" routerLinkActive="bg-gray-800" class="flex items-center px-4 py-3 hover:bg-gray-800">
+        <span class="material-icons mr-3">article</span>
+        Published Ads
+      </a>
+      <a routerLink="reserved-cars" routerLinkActive="bg-gray-800" class="flex items-center px-4 py-3 hover:bg-gray-800">
+        <span class="material-icons mr-3">event</span>
+        Reserved Cars
+      </a>
+      <a routerLink="account-settings" routerLinkActive="bg-gray-800" class="flex items-center px-4 py-3 hover:bg-gray-800">
+        <span class="material-icons mr-3">settings</span>
+        Account Settings
+      </a>
+    </nav>
+
+    <div class="absolute bottom-0 w-64 p-4">
+      <button class="flex items-center px-4 py-3 w-full hover:bg-gray-800 text-left">
+        <span class="material-icons mr-3">logout</span>
+        Log Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 overflow-y-auto">
+    <router-outlet></router-outlet>
+  </main>
+</div>

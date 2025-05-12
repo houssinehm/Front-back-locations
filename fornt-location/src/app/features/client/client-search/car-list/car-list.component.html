@@ -1,0 +1,66 @@
+<!-- car-list.component.html -->
+<div class="font-montserrat flex-1">
+  <div class="flex justify-between items-center mb-4">
+    <span>Showing {{ 6 + annonces.length }} cars</span>
+    <select class="border rounded p-2">
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+    </select>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- 6 CARTES STATIQUES -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CARTES DYNAMIQUES -->
+    <div
+      *ngFor="let annonce of annonces"
+      class="bg-white rounded shadow overflow-hidden"
+    >
+      <img
+        img [src]="'http://localhost:8080/uploads/' + annonce.car.url_photo"
+        [alt]="annonce.car.model"
+        class="w-full h-48 object-cover"
+      />
+      <div class="p-4">
+        <h3 class="font-semibold text-lg">{{ annonce.car.model }}</h3>
+        <p class="text-sm text-gray-500 mb-2">{{ annonce.car.type }}</p>
+        <div class="flex gap-2 text-xs mb-2">
+          <span
+            class="bg-purple-100 px-2 py-1 rounded"
+            *ngIf="annonce.car.fuel"
+          >
+            {{ annonce.car.fuel }}
+          </span>
+          <span
+            class="bg-purple-100 px-2 py-1 rounded"
+            *ngIf="annonce.car.gearbox"
+          >
+            {{ annonce.car.gearbox }}
+          </span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="text-yellow-600 font-semibold">
+            {{ annonce.daily_price }}<span class="text-sm text-gray-500">/day</span>
+          </span>
+          <button
+          class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded text-sm"
+          [routerLink]="['/client-search/booking', annonce.car.id]"
+          >
+          Book Now →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

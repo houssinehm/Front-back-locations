@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div *ngIf="!isBookingRoute">
+  <app-client-navbar></app-client-navbar>
+</div>
+
+<div *ngIf="!isBookingRoute" class="flex flex-col sm:flex-row gap-6 p-4">
+  <app-filters-sidebar class="w-full sm:w-1/4"></app-filters-sidebar>
+  <app-car-list [annonces]="annonces" class="w-full sm:w-3/4"></app-car-list>
+</div>
+
+<div *ngIf="isBookingRoute" class="p-4">
+  <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

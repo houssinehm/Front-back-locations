@@ -1,0 +1,43 @@
+<form [formGroup]="annonceForm" (ngSubmit)="submit()">
+  <div class="publish-dialog">
+    <div class="dialog-content">
+      <h2>Publish Car</h2>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          placeholder="Enter car description"
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="daily_price">Price (per day)</label>
+        <input
+          type="number"
+          id="daily_price"
+          formControlName="daily_price"
+          placeholder="Enter price per day"
+          min="0"
+        />
+      </div>
+      <div class="form-group checkbox-group">
+        <input type="checkbox" id="cancel_free" formControlName="cancel_free" />
+        <label for="cancel_free">Cancel free</label>
+      </div>
+      
+      <div class="button-group">
+        <button class="cancel-button" (click)="onCancel()">Cancel</button>
+        <button
+          class="publish-button"
+          type="submit"
+          [disabled]="annonceForm.invalid"
+        >
+          Publish
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

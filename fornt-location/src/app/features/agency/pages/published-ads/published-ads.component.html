@@ -1,0 +1,224 @@
+<div class="p-4 md:p-6">
+  <div class="mb-4 md:mb-6">
+    <h1 class="text-xl md:text-3xl font-bold text-gray-900">Published Ads</h1>
+    <p class="text-gray-600 mt-1">Manage your car advertisements</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+    <!-- Car Card 1 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div class="relative">
+        <img [class.grayscale]="!isGrayscale1"
+             src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+             alt="Mercedes C-Class"
+             class="w-full h-40 md:h-48 object-cover transition-all duration-300"/>
+        <div class="absolute top-4 right-4">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" [(ngModel)]="isGrayscale1" class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 rounded-full peer
+                        peer-checked:bg-[#FFC107] peer-checked:after:translate-x-5
+                        after:content-[''] after:absolute after:top-0.5 after:left-0.5
+                        after:bg-white after:rounded-full after:h-5 after:w-5
+                        after:shadow-sm after:transition-all">
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold">Mercedes C-Class 2022</h3>
+        <p class="text-xl md:text-2xl font-bold text-[#FFC107] mt-2">$50/day</p>
+        <div class="flex items-center justify-between mt-2">
+          <span class="text-gray-600 text-sm">New York, NY</span>
+          <div class="flex items-center gap-1 text-gray-500">
+            <span class="material-icons text-sm">visibility</span>
+            <span class="text-sm">245 views</span>
+          </div>
+        </div>
+        <div class="text-sm text-gray-500 mt-1">Published: Apr 20, 2025</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
+          <button class="flex items-center justify-center gap-1 py-2 px-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+            <span class="material-icons text-gray-600 text-sm">edit</span>
+            Edit
+          </button>
+          <button class="flex items-center justify-center gap-1 py-2 px-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm">
+            <span class="material-icons text-sm">delete</span>
+            Delete
+          </button>
+          <button class="flex items-center justify-center gap-1 py-2 px-2 bg-[#FFC107] text-black rounded-lg hover:bg-[#FFA000] transition-colors text-sm">
+            <span class="material-icons text-sm">visibility</span>
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car Card 2 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div class="relative">
+        <img [class.grayscale]="!isGrayscale2"
+             src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+             alt="BMW 3 Series"
+             class="w-full h-40 md:h-48 object-cover transition-all duration-300"/>
+        <div class="absolute top-4 right-4">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" [(ngModel)]="isGrayscale2" class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 rounded-full peer
+                        peer-checked:bg-[#FFC107] peer-checked:after:translate-x-5
+                        after:content-[''] after:absolute after:top-0.5 after:left-0.5
+                        after:bg-white after:rounded-full after:h-5 after:w-5
+                        after:shadow-sm after:transition-all">
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold">BMW 3 Series 2023</h3>
+        <p class="text-xl md:text-2xl font-bold text-[#FFC107] mt-2">$55/day</p>
+        <div class="flex items-center justify-between mt-2">
+          <span class="text-gray-600 text-sm">Chicago, IL</span>
+          <div class="flex items-center gap-1 text-gray-500">
+            <span class="material-icons text-sm">visibility</span>
+            <span class="text-sm">187 views</span>
+          </div>
+        </div>
+        <div class="text-sm text-gray-500 mt-1">Published: Apr 18, 2025</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
+          <button class="flex items-center justify-center gap-1 py-2 px-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+            <span class="material-icons text-gray-600 text-sm">edit</span>
+            Edit
+          </button>
+          <button class="flex items-center justify-center gap-1 py-2 px-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm">
+            <span class="material-icons text-sm">delete</span>
+            Delete
+          </button>
+          <button class="flex items-center justify-center gap-1 py-2 px-2 bg-[#FFC107] text-black rounded-lg hover:bg-[#FFA000] transition-colors text-sm">
+            <span class="material-icons text-sm">visibility</span>
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car Card 3 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div class="relative">
+        <img [class.grayscale]="!isGrayscale3"
+             src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+             alt="Tesla Model 3"
+             class="w-full h-40 md:h-48 object-cover transition-all duration-300"/>
+        <div class="absolute top-4 right-4">
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" [(ngModel)]="isGrayscale3" class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 rounded-full peer
+                        peer-checked:bg-[#FFC107] peer-checked:after:translate-x-5
+                        after:content-[''] after:absolute after:top-0.5 after:left-0.5
+                        after:bg-white after:rounded-full after:h-5 after:w-5
+                        after:shadow-sm after:transition-all">
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="p-4 md:p-6">
+        <h3 class="text-lg md:text-xl font-semibold">Tesla Model 3 2023</h3>
+        <p class="text-xl md:text-2xl font-bold text-[#FFC107] mt-2">$80/day</p>
+        <div class="flex items-center justify-between mt-2">
+          <span class="text-gray-600 text-sm">San Francisco, CA</span>
+          <div class="flex items-center gap-1 text-gray-500">
+            <span class="material-icons text-sm">visibility</span>
+            <span class="text-sm">0 views</span>
+          </div>
+        </div>
+        <div class="text-sm text-gray-500 mt-1">Published: Apr 15, 2025</div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
+          <button class="flex items-center justify-center gap-1 py-2 px-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+            <span class="material-icons text-gray-600 text-sm">edit</span>
+            Edit
+          </button>
+          <button class="flex items-center justify-center gap-1 py-2 px-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm">
+            <span class="material-icons text-sm">delete</span>
+            Delete
+          </button>
+          <button class="flex items-center justify-center gap-1 py-2 px-2 bg-[#FFC107] text-black rounded-lg hover:bg-[#FFA000] transition-colors text-sm">
+            <span class="material-icons text-sm">visibility</span>
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="px-6 py-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+  <div *ngFor="let annonce of annonces ; let i = index"
+       class="bg-white rounded-xl shannonceow-md overflow-hidden hover:shannonceow-lg transition-shannonceow duration-300">
+    <div class="relative">
+
+
+           <img [src]="'http://localhost:8080/uploads/' + annonce.car.url_photo"
+
+           class="w-full h-40 md:h-48 object-cover transition-all duration-300"
+            [class.grayscale]="!isGrayscale[i]"
+            (change)="toggleGrayscale(i)"  />
+
+
+      <div class="absolute top-4 right-4">
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox"  class="sr-only peer" [(ngModel)]="isGrayscale[i]">
+          <div class="w-11 h-6 bg-gray-200 rounded-full peer
+                      peer-checked:bg-[#FFC107] peer-checked:after:translate-x-5
+                      after:content-[''] after:absolute after:top-0.5 after:left-0.5
+                      after:bg-white after:rounded-full after:h-5 after:w-5
+                      after:shannonceow-sm after:transition-all">
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="p-4 md:p-6">
+      <h3 class="text-lg md:text-xl font-semibold">{{ annonce.car.brand + ' ' + annonce.car.model }}</h3>
+      <p class="text-xl mb-2 md:text-2xl font-bold text-[#FFC107] mt-2">{{ annonce.daily_price }}  DH/day</p>
+      <div class="flex flex-wrap items-center gap-2 mb-2 text-gray-600">
+        <div class="flex items-center gap-1">
+          <span class="material-icons text-sm">location_on</span>
+          <span class="text-sm">{{ annonce.car.city }}</span>
+        </div>
+        <!-- Option pour ajouter une date -->
+        <!-- <div class="flex items-center gap-1">
+          <span class="material-icons text-sm">event</span>
+          <span class="text-sm">{{ car.availableDate }}</span>
+        </div> -->
+      </div>
+
+      <!-- Détails des caractéristiques -->
+      <div class="flex flex-wrap items-center gap-3 md:gap-4 mb-4 text-gray-600">
+        <div class="flex items-center gap-1">
+          <span class="material-icons text-sm">person</span>
+          <span class="text-sm">{{ annonce.car.number_place }} seats</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="material-icons text-sm">local_gas_station</span>
+          <span class="text-sm">{{ annonce.car.fuel }}</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="material-icons text-sm">settings</span>
+          <span class="text-sm">{{ annonce.car.gearbox }}</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <span class="material-icons text-sm">ac_unit</span>
+          <span class="text-sm">{{ annonce.car.clim ? 'Clim' : 'No Clim' }}</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-4">
+        <button class="flex items-center justify-center gap-1 py-2 px-2 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+          <span class="material-icons text-gray-600 text-sm">edit</span> Edit
+        </button>
+        <button class="flex items-center justify-center gap-1 py-2 px-2 border border-red-200 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm">
+          <span class="material-icons text-sm">delete</span> Delete
+        </button>
+        <button class="flex items-center justify-center gap-1 py-2 px-2 bg-[#FFC107] text-black rounded-lg hover:bg-[#FFA000] transition-colors text-sm">
+          <span class="material-icons text-sm">visibility</span> View
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
